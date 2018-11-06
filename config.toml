@@ -1,4 +1,5 @@
 baseURL = "https://dufflesh.netlify.com/"
 title = "Duffle"
+description = "Duffle is a command line tool that allows you to install and manage CNAB bundles"
 theme = "hugo-paper"
 languageCode = "en-us"
