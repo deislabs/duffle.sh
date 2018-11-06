@@ -1,0 +1,4 @@
+baseURL = "https://dufflesh.netlify.com/"
+title = "Duffle"
+theme = "hugo-paper"
+languageCode = "en-us"
