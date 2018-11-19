@@ -7,21 +7,19 @@
   <span>Designed by <a href="http://21beats.com/" rel="noopener" target="_blank">️21beats️</a>️</span> -->
   <span>Coming soon.️</span>
 </footer>
-<script src="{{.Site.BaseURL}}js/instantclick.min.js" data-no-instant></script>
-<script data-no-instant>InstantClick.init();</script>
-<script src="{{.Site.BaseURL}}js/highlight.min.js" data-no-instant></script>
-<script data-no-instant>
-  addMenuListener();
-  InstantClick.on('change', function() {
-    addMenuListener();
-  });
-  function addMenuListener() {
-    var $toggle = document.querySelector('.menu-toggle');
-    var $body = document.querySelector('body');
-    $toggle.addEventListener('click', function() {
-      $body.classList.toggle('noscroll');
-    }, false);
-  }
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '5bf306b3ddc1c42738660a8c');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
 </script>
 </body>
 </html>
