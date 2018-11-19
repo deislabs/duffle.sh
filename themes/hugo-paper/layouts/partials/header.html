@@ -18,6 +18,7 @@
   {{- if eq .Kind "page" }}
   <meta name="description" content="{{ .Summary }}">
   <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
+  <meta name="msvalidate.01" content="1B0A33E2FEA0B50B19255C6576B04979" />
   {{ else }}
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="author" content="{{ .Site.Params.author }}">
