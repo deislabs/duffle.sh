@@ -1,4 +1,4 @@
 baseURL = "https://dufflesh.netlify.com/"
 title = "Duffle"
-theme = "hugo-paper"
+theme = "duffle"
 languageCode = "en-us"
