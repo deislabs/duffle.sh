@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-  <title>CNAB: Cloud Native Application Bundles</title>
+  <title>Duffle: Install and Manage Distributed Apps</title>
   
   <!-- Meta -->
   {{- if eq .Kind "page" }}
@@ -22,12 +22,25 @@
   <link href="{{.Site.BaseURL}}css/styles.min.css" rel="stylesheet">
   
   <!-- Icons -->
-  <link rel="icon" type="image/png" href="static/img/favicon.png">
-  <link rel="apple-touch-icon" href="static/img/touch-icon-iphone-60x60.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="static/img/touch-icon-ipad-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="static/img/touch-icon-iphone-retina-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="static/img/touch-icon-ipad-retina-152x152.png">
-  <link rel="icon" href="{{.Site.BaseURL}}img/favicon.ico">
+  <link rel="icon" type="image/png" href="static/img/icon/favicon.png">
+  <link rel="icon" href="{{.Site.BaseURL}}img/icon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="static/img/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="static/img/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="static/img/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="static/img/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="static/img/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="static/img/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="static/img/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="static/img/icon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/img/icon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="static/img/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="static/img/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="static/img/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="static/img/icon/android-chrome-192x192.png" sizes="192x192">
+  <meta name="msapplication-square70x70logo" content="static/img/icon/smalltile.png" />
+  <meta name="msapplication-square150x150logo" content="static/img/icon/mediumtile.png" />
+  <meta name="msapplication-wide310x150logo" content="static/img/icon/widetile.png" />
+  <meta name="msapplication-square310x310logo" content="static/img/icon/largetile.png" />
   
   <!-- Generator -->
   {{ .Hugo.Generator }}
@@ -40,21 +53,17 @@
 
 <body class="{{if eq .Kind `page` }}single{{else}}list{{ if .IsHome }} home{{ end }}{{end}}">
   
-    <header class="header row row-full">
-      <div class="show-for-large-up large-1 columns"></div>
-      <div class="small-6 large-4 columns">
-        <h1 class=""><a href="{{.Site.BaseURL}}">
-          <img src="{{.Site.BaseURL}}img/cnab-text.svg" class="logo" alt="Cloud Native Application Bundle" /> 
-        </a></h1>
+    <header class="header row">
+      <div class="show-for-large-up large-4 columns">
+        <h1 class="hidden"><a href="{{.Site.BaseURL}}">Duffle</a></h1>
       </div>
   
       <!-- desktop menu-->
-      <nav class="large-4 columns end">
+      <nav class="small-12 large-8 columns end">
         <ul class="inline-list right show-for-large-up menu-desktop">
           {{ partial "nav.html" . }}
         </ul>
       </nav>
-      <div class="show-for-large-up large-1 columns"></div>
       
       <!-- mobile menu-->
       <button class="menu-toggle hide-for-large-up columns" type="button"></button>

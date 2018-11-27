@@ -1,5 +1,4 @@
-
-// CNAB import style frameworks
+// Duffle import style frameworks
 // ---------------------------------------
 
 $fa-font-path: "../fonts" !default;
@@ -21,7 +20,7 @@ $fa-font-path: "../fonts" !default;
 @import "../../../../node_modules/foundation-sites/scss/foundation/components/visibility.scss";
 
 
-// CNAB palette
+// Duffle and CNAB palette
 // ---------------------------------------
 // core colors
 $navy:  #3731AA;
@@ -160,7 +159,7 @@ $workbold: 'work_sanssemibold', 'Helvetica Neue', Helvetica, Arial, Geneva, sans
 }
 
 
-// CNAB General
+// Duffle General
 // ---------------------------------------
 html,
 body {
@@ -186,38 +185,17 @@ h1, h2, h3, h4, h5, h6,
   font-family: $workbold;
 }
 
+.row {
+  width: 92%;
+  max-width: 92rem;
+}
+
 .row-full {
   max-width: 100%;
 }
 
 .height-full {
   min-height: 100%;
-}
-
-.corner {
-  &::before{
-    @include corner;
-    z-index: 502;
-  }
-  &::after{
-    @include corner;
-    transform: rotate(90deg);
-    margin: -0.75rem 0 0 0.75rem;
-    z-index: 505;
-  }
-
-  &.corner-br {
-    &::before {
-      @include corner(0.5rem, auto, auto, 1.85rem, 8.35%);
-    }
-    &::after {
-      @include corner(0.5rem, auto, auto, 1.5rem, 8.85%);
-    }
-
-    &::after {
-      margin: 0 0.425rem -0.425rem 0;
-    }
-  }
 }
 
 
@@ -267,18 +245,23 @@ small {
 }
 
 
-// CNAB Nav
+// Duffle Nav
 // ---------------------------------------
-.header {
+.home .header {
   padding-left: 0;
   padding-right: 0;
   min-height: 5rem;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  @include transition;
+
+  &:hover {
+    border-bottom: 2px solid rgba(255,255,255,0.125);
+  }
   
   h1 {
-    margin: 0;
-    padding: 0;
-    line-height: 5rem;
-    @include ripple;
+    text-indent: -999em;
+    position: absolute;
   }
  
   img.logo {
@@ -322,233 +305,88 @@ small {
 }
 
 
-// CNAB Sections
+// Duffle Sections
 // ---------------------------------------
+body.home {
+  background: url('../img/intro-bg.png') no-repeat center top;
+  background-attachment: scroll;
+  overflow-x: hidden;
+}
+
 #intro {
-  border-top: 2px solid rgba(0,0,0,0.05);
-  padding-top: 7.5rem;
-  background: #fff url(../img/intro.svg) no-repeat center 21rem;
-  background-size: 120rem;
+  padding-top: 14.5rem;
   z-index: -10;
   min-height: 53rem !important;
+  position: relative;
+  z-index: 520;
 
-  h2 {
-    position: relative;
-    font-size: 3vw;
-    margin-left: -4rem;
+  h1.duffle-wordmark {
+    img {
+      max-height: 40px;
 
-    strong {
-      @include wipe($green);
-      color: $navy;
-      background-color: $yellowl;
-      margin: 0 0 1.5rem;
-      padding: 1.25rem 2.5rem;
-      display: inline-block;  
-      z-index: 500;
-    } 
-
-    .corner,
-    .corner-br {
-      margin-left: -2rem;
     }
   }
 
-  .subhead {
-    padding: 0 5% 0 1rem;
-    margin: -2rem 0 12rem -2rem;
-  }
-
-  .cnab-logo {
+  .duffle-logo {
+    width: 11rem;
+    height: 11rem;
     position: absolute;
-    top: 24rem;
-    left: 50%;
-    margin-left: 26rem;
-    width: 8rem;
-  }
-
-  .button {
-    box-sizing: border-box;
-    font-size: $base-lg;
-    font-family: $workbold;
-    color: $navy;
-    width: 15rem;
-    height: 4.5rem;
-    margin: 2rem auto;
-    padding: 0.75rem 2rem;
-    border: 4px solid $navy;
-    z-index: 600;
-    background: transparent !important;
-    @include wipe($green);
+    top: -2.5rem;
+    left: 100%;
+    margin-left: 12.5rem;
+    background-color: transparent;
+    text-align: center;
+    z-index: 550;
+    @include border-radius(50%, 50%);
+    @include transition;
+      
+    img {
+      max-width: 7.5rem;
+      margin: 1.5rem auto 2rem;
+      @include transition;
+    }
 
     &:hover {
-      border: 5px solid $navy;
+      background-color: rgba(255,255,255,0.333);
+
+      img {
+        margin-top: 1.2rem;
+      }
     }
   }
 
+  h2 {
+    padding-right: 8.25%;
+    color: darken($navy, 7.5%);
+    margin: 2.75rem 0 4rem;
+  }
+
+  p.subhead {
+    a {
+      @include transition;
+      @include ripple;
+    }
+
+  }
+  
   small {
     display: block;
+  }
+
+  .cnab-info {
+
+    img.cnab-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
   }
 }
 
 
 #features {
-  background-color: $navy;
-  background: linear-gradient(lighten($navy, 7.5%), darken($navy, 7.5%));
-  padding-top: 9.25rem;
-  padding-bottom: 6.333rem;
-
-  h3, h4, p {
-    color: white;
-  }
-
-  img {
-    margin: 0 2rem 8.25rem;
-
-    &.feature-02 {
-      margin-top: 1rem;
-      margin-bottom: 12rem;
-    }
   
-    &.feature-03 {
-      margin-top: -2.5rem;
-    }
-  }
-
-  h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  p.lead {
-    padding-right: 12.5%;
-  }
-
-  p.bloglink {
-    width: 100%;
-    margin: 0 auto;
-    padding-right: 0;
-    font-family: $workbold;
-
-    a {
-      color: $yellowl;
-      line-height: 1.825;
-      @include ripple($yellowl);
-    }
-  }
-}
-
-#resources {
-  padding-top: 5.25rem;
-  padding-bottom: 7.5rem;
-
-  h3 {
-    margin-bottom: 4.5rem;
-  }
-
-  .panel {
-    margin-bottom: 2.5rem;
-    background-color: white;
-
-    a {
-      padding: 1.75rem 2rem;
-      border: 4px solid darken($yellowl, 5%);
-      min-height: 12.2rem;
-      display: inline-block;
-      box-sizing: border-box;
-      width: 100%;
-      position: relative;
-      @include transition;
-
-      &:hover {
-        
-        &::after {
-          width: 100%;
-          opacity: 0.25;
-        }
-      }
-
-      &::after {
-        width: 0%;
-        opacity: 0;;
-        height: 100%;
-        @include transition;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        display: inline-block;
-        content: " ";
-        background-color: $bluel;
-      }
-    }
-
-    h4 {
-      color: $navy;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      line-height: 1.875;
-      margin-bottom: 0.5rem;
-    }
-
-    &.panel-navy {
-      a {
-        border-color: $navy;
-      }
-      
-      .fa {
-        color: $navy;
-      }
-    }
-
-    &.panel-blue {
-      a {
-        border-color: $bluel;
-      }
-      
-      .fa {
-        color: $navy;
-      }
-    }
-
-    &.panel-yellow {
-      &:hover {
-        border-color: $bluel !important;
-      }
-    }
-
-    &.panel-green {
-      a {
-        border-color: $green;
-      }
-      .fa {
-        color: $green;
-      }
-    }
-
-    &.panel-bundles {
-      a {
-        background: url(../img/screener.png) no-repeat right top ;
-        padding-right: 30%;
-      }
-    }
-
-    &.panel-duffle {
-      img {
-        margin: 0.333rem 3.5rem 0.333rem 1rem;
-      }
-
-      p {
-        margin: 1.75rem 0;
-      }
-    }
-  }
-
-  h3, p {
-    color: $navy;
-  }
 }
 
 #credits {
@@ -706,30 +544,7 @@ small {
   }
   
   #intro {
-    background-image: none;
-    padding-top: 13.5rem;
-    
-    h2 {
-      font-size: $base-xlg;
-      display: inline-block;
-      
-      strong {
-        padding: 1.25rem 3.2rem;
-      }
-    }
-
-    p.subhead {
-      font-size: $base-lg;
-    }
-
-    .cnab-logo {
-      position: absolute;
-      bottom: auto;
-      right: auto;
-      left: 2.5rem;
-      width: 7.5rem;
-      top: -9.5rem;
-    }
+  
   }
 
   #intro small, .corner {
