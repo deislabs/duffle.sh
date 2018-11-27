@@ -14,11 +14,13 @@ var gulp = require('gulp'),
   cssnano = require('gulp-cssnano'),
   sourcemaps = require('gulp-sourcemaps'),
   streamqueue = require('streamqueue');
+  sass.compiler = require('node-sass');
 
 
 // Styles
 gulp.task('styles', function () {
-  return sass('themes/duffle/static/sass/styles.scss', {style: 'compressed'})
+  return gulp.src('themes/duffle/static/sass/styles.scss', {style: 'compressed'})
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
@@ -26,7 +28,7 @@ gulp.task('styles', function () {
     .pipe(cssnano())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(destination + '/css'))
-    .pipe(gulp.dest('themes/duffle/static/css/'))
+    .pipe(gulp.dest('static/css/'))
     .pipe(notify({message: 'Styles compiled.'}));
 });
 
@@ -52,7 +54,7 @@ gulp.task('copy', function () {
 });
 gulp.task('copyall', function () {
   return gulp.src('static/**/*')
-    .pipe(gulp.dest('public/'))
+    .pipe(gulp.dest('public'))
     .pipe(notify({message: 'Copied all.'}));
 });
 
@@ -66,7 +68,7 @@ gulp.task('clean', function () {
 
 
 // 'gulp' default task to build the site assets
-gulp.task('default', ['styles', 'images', 'copy']);
+gulp.task('default', ['styles', 'images', 'copy', 'copyall']);
 
 // 'gulp watch' to watch for changes during dev
 gulp.task('watch', function () {
