@@ -163,12 +163,11 @@ $workbold: 'work_sanssemibold', 'Helvetica Neue', Helvetica, Arial, Geneva, sans
 // ---------------------------------------
 html,
 body {
-  height: 100%;
+  height: auto;
 }
-
-.off-canvas-wrap{  
-  height: 100%;
+.off-canvas-wrap {  
   overflow-y: auto;
+  min-height: 100%;
 }
 
 html,
@@ -180,9 +179,14 @@ body,
   min-height: 100vh !important;
 }
 
+body.list.home {
+  padding-bottom: 0;
+}
+
 h1, h2, h3, h4, h5, h6,
 .post-title {
   font-family: $workbold;
+  color: $navy;
 }
 
 .row {
@@ -306,9 +310,14 @@ small {
 
 // Duffle Sections
 // ---------------------------------------
+html {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(249,249,249,1) 70%) no-repeat;
+  min-height: 100%;
+}
 body.home {
-  background: url('../img/intro-bg.png') no-repeat center top;
-  background-attachment: scroll;
+  background:
+    url('../img/intro-bg.png') no-repeat center top,
+    url('../img/intro-bg-wide-tile.png') no-repeat center top;
   overflow-x: hidden;
 }
 
@@ -332,9 +341,11 @@ body.home {
     top: -3rem;
     left: 100%;
     margin-left: 11.75rem;
-    background-color: transparent;
+    background-color: rgba(212, 230, 254, 0.25);
+    background-blend-mode: screen;
     text-align: center;
-    z-index: 550;
+    z-index: 850;
+    @include box-shadow(0, 0.2rem, 4px, rgba(30,30,30,0.1));
     @include border-radius(50%, 50%);
     @include transition;
       
@@ -345,10 +356,11 @@ body.home {
     }
 
     &:hover {
-      background-color: rgba(255,255,255,0.333);
+      background-color: rgba(255, 255, 255, 0.333);
+      @include box-shadow(0, 0, 7px, rgba(30,30,30,0.3));
 
       img {
-        margin-top: 1.2rem;
+        margin-top: 1.35rem;
       }
     }
   }
@@ -373,15 +385,69 @@ body.home {
 
   .cnab-info {
     position: relative;
-    min-height: 20rem;
-    background-color: $yellowl;
+    padding-top: 22rem;
+    min-height: 34rem;
+    display: inline-block;
+    width: 100%;
+    z-index: 700;
 
-    img.cnab-icon {
+    img.cnab-logo {
       position: absolute;
-      right: 0;
-      bottom: 0;
+      max-width: 5.5rem;
+      right: 2.5rem;
+      top: 21.5rem;
     }
 
+    span {
+      font-family: $workbold;
+      color: $green;
+      position: absolute;
+      right: -1.5rem;
+      bottom: 2rem;
+      max-width: 10rem;
+      line-height: 1.35;
+    }
+
+    &:hover {
+      span i.fa {
+        padding-left: 0.25rem;
+        @include transition;
+      }
+    }
+
+    &:after {
+      min-width: 100vh;
+      min-height: 34rem;
+      content: " ";
+      position: absolute;
+      top: 5rem;
+      right: 0;
+      margin-right: -6.67vh;
+      display: inline-block;
+      background: url(../img/cnab-triangle.svg) no-repeat right bottom;
+      z-index: -10;
+    }
+  }
+
+  .button {
+    margin: 1em auto;
+    background: $navy;
+    font-family: $workbold;
+    padding: 1.333rem 2.825rem;
+    display: inline-block;
+    color: white;
+    border-radius: 5em;
+    border: none;
+    position: relative;
+    z-index: 1020;
+    @include transition;
+    @include box-shadow(0,2px,14px,rgba(0,0,0,0.02));
+  
+    &:hover {
+      background: darken($navy, 12.5%);
+      color: white;
+      opacity: 0.95;
+    }
   }
 }
 
@@ -391,10 +457,10 @@ body.home {
 }
 
 #credits {
-  padding-top: 4rem;
-  padding-bottom: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 15rem;
 
-  h3 {
+  h4 {
     margin-bottom: 2rem;
   }
   
@@ -415,8 +481,7 @@ body.home {
     display: inline-block;
     height: 2px;
     width: 50%;
-    // margin-left: -25%;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.025);
     top: 1.25rem;
   }
 }
@@ -440,16 +505,15 @@ body.home {
 
 #footer {
   background-color: white;
-  padding-bottom: 1rem;
   border-top: 2px solid rgba(0,0,0,0.05);
+  position: relative;
 
   .deislabs {
     width: 5.5rem;
     height: 7.3rem;
     display: inline-block;
-    position: relative;
-    margin-top: -5.35rem;
-    bottom: -1px;
+    position: absolute;
+    top: -4rem;
 
     span {
       background: url(../img/deislabs.svg) no-repeat center bottom;
@@ -517,9 +581,13 @@ body.home {
     }
   }
 
+  p {
+    margin: 2rem 0;
+    padding: 0 0 0 6rem;
+  }
+
   .fa {
     font-size: $base-lg;
-    margin: 2.2rem 0;
     color: #333;
   }
 }

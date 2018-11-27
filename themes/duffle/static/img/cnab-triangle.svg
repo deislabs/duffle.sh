@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="499px" height="500px" viewBox="0 0 499 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>CNab &lt;</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="47.6413173%" y1="25.3399762%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFF3E6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Website" transform="translate(-781.000000, -631.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Intro" transform="translate(-88.000000, -175.000000)">
+                <g id="CNab-&lt;" transform="translate(869.000000, 806.000000)">
+                    <polygon id="Path-9" points="499 499.445312 0.34375 499.445312 499 0.7890625"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
