@@ -2,7 +2,7 @@ var destination = process.env.GULP_DESTINATION || 'static';
 
 // Load plugins
 var gulp = require('gulp'),
-  sass = require('gulp-ruby-sass'),
+  sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   minifycss = require('gulp-clean-css'),
   rename = require('gulp-rename'),
