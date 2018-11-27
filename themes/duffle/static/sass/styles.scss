@@ -186,8 +186,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .row {
-  width: 92%;
-  max-width: 92rem;
+  max-width: 70rem;
 }
 
 .row-full {
@@ -314,7 +313,7 @@ body.home {
 }
 
 #intro {
-  padding-top: 14.5rem;
+  padding-top: 15rem;
   z-index: -10;
   min-height: 53rem !important;
   position: relative;
@@ -323,7 +322,6 @@ body.home {
   h1.duffle-wordmark {
     img {
       max-height: 40px;
-
     }
   }
 
@@ -331,9 +329,9 @@ body.home {
     width: 11rem;
     height: 11rem;
     position: absolute;
-    top: -2.5rem;
+    top: -2rem;
     left: 100%;
-    margin-left: 12.5rem;
+    margin-left: 11.75rem;
     background-color: transparent;
     text-align: center;
     z-index: 550;
@@ -356,7 +354,7 @@ body.home {
   }
 
   h2 {
-    padding-right: 8.25%;
+    padding-right: 12.5%;
     color: darken($navy, 7.5%);
     margin: 2.75rem 0 4rem;
   }
@@ -374,6 +372,9 @@ body.home {
   }
 
   .cnab-info {
+    position: relative;
+    min-height: 20rem;
+    background-color: $yellowl;
 
     img.cnab-icon {
       position: absolute;
