@@ -1,6 +1,6 @@
 ![Theme Screenshot](https://github.com/deislabs/duffle.sh/blob/master/themes/duffle/img/theme.png?raw=true)
 
-A simple for [Duffle](https://github.com/deislabs/duffle) a child project of the CNAB project.
+A simple website for [Duffle](https://github.com/deislabs/duffle), which is cloned from [CNAB.io](https://github.com/deislabs/cnab.io).
 
 # Editing Content
 
