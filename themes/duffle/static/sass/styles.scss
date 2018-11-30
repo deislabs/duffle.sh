@@ -683,20 +683,21 @@ body.list {
       padding-top: 2.5rem;
       min-height: 6.5rem;
       margin-top: 2.5rem;
-      background-color: lighten($yellowl, 2%);
+      background-color: $yellowl;
       z-index: 100;
       position: relative;
 
       img.cnab-logo {
-        top: -0.75rem;
-        right: 5%;
+        top: 1.5rem;
+        right: 3.5%;
         left: auto;
+        max-width: 3.33rem;
       }
 
       p {
         right: auto;
-        left: 6.67%;
-        min-width: 60%;
+        left: 5%;
+        min-width: 70%;
         top: auto;
         bottom: auto;
         margin: 0;
