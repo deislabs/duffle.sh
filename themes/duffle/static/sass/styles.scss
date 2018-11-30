@@ -537,6 +537,7 @@ body.list {
   background-color: white;
   border-top: 2px solid rgba(0,0,0,0.05);
   position: relative;
+  min-height: 5.5rem;
 
   .deislabs {
     width: 5.5rem;
@@ -589,6 +590,10 @@ body.list {
       }
     }
 
+    & + p {
+      padding: 0 0 0 6rem;
+    }
+
     a {
       display: inline-block;
       width: 5.5rem;
@@ -612,12 +617,12 @@ body.list {
   }
 
   p {
-    margin: 2rem 0;
-    padding: 0 0 0 6rem;
+    margin: 0.125rem 0;
   }
 
   .fa {
     font-size: $base-lg;
+    margin-top: 2rem;
     color: #333;
   }
 }
@@ -676,6 +681,10 @@ body.list {
         max-width: 60%;
         bottom: auto;
         color: darken($green, 5%);
+
+        em {
+          font-style: normal;
+        }
       }
 
       &:after {
