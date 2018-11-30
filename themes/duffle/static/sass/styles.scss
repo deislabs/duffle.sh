@@ -427,17 +427,23 @@ body.list {
       top: 21.5rem;
     }
 
-    span {
+    p {
       font-family: $workbold;
       color: $green;
       position: absolute;
+      display: inline-block;
       right: -1.5rem;
-      bottom: 2rem;
-      max-width: 10rem;
+      bottom: 0rem;
+      width: 10rem;
       line-height: 1.35;
+
+      em {
+        font-style: normal;
+        display: inline !important;
+      }
     }
 
-    &:hover {
+    a:hover {
       span i.fa {
         padding-left: 0.25rem;
         @include transition;
@@ -675,16 +681,14 @@ body.list {
         left: auto;
       }
 
-      span {
+      p {
         right: auto;
         left: 6.67%;
-        max-width: 60%;
+        min-width: 60%;
+        top: auto;
         bottom: auto;
+        margin: 0;
         color: darken($green, 5%);
-
-        em {
-          font-style: normal;
-        }
       }
 
       &:after {
