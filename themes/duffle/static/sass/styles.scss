@@ -271,6 +271,7 @@ small {
     max-height: 75px;
     max-width: 200px;
     display: inline-block;
+    z-index: 350;
   }
 
   nav {
@@ -391,6 +392,17 @@ body.list {
       img {
         margin-top: 1.35rem;
       }
+    }
+
+    &:after {
+      width: 2px;
+      height: 12rem;
+      content: " ";
+      position: absolute;
+      top: 11.5rem;
+      left: 49.5%;
+      z-index: 300;
+      background-color: lighten($bluel, 7.5%);
     }
   }
 
@@ -750,7 +762,7 @@ body.list {
     }
   }
 
-  #intro small, .corner {
+  #intro small, .corner, #intro .duffle-logo:after {
     display: none !important;
   }
 }
