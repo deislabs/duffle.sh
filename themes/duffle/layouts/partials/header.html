@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-  
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <title>Duffle: Install and Manage Distributed Apps</title>
-  
+
   <!-- Meta -->
   {{- if eq .Kind "page" }}
   <meta name="description" content="{{ .Summary }}">
@@ -17,7 +17,7 @@
   <meta name="author" content="{{ .Site.Params.author }}">
   <meta name="msvalidate.01" content="1B0A33E2FEA0B50B19255C6576B04979" />
   {{ end -}}
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="deislabs">
@@ -27,11 +27,11 @@
   <meta name="twitter:image:alt" content="Duffle: Install and manage distributed apps.">
 
   <!-- Styles -->
-  <link href="{{.Site.BaseURL}}css/styles.min.css" rel="stylesheet">
-  
+  <link href="{{.Site.BaseURL}}/css/styles.min.css" rel="stylesheet">
+
   <!-- Icons -->
   <link rel="icon" type="image/png" href="img/icon/favicon.png">
-  <link rel="icon" href="{{.Site.BaseURL}}img/icon/favicon.ico">
+  <link rel="icon" href="{{.Site.BaseURL}}/img/icon/favicon.ico">
   <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-touch-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-touch-icon-72x72.png">
@@ -57,30 +57,30 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5266XVH');</script>
   <!-- End Google Tag Manager -->
-  
+
   <!-- Generator -->
   {{ .Hugo.Generator }}
   <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" href="{{.Site.BaseURL}}index.xml" title="{{ .Site.Title }}">
+  <link rel="alternate" type="application/atom+xml" href="{{.Site.BaseURL}}/index.xml" title="{{ .Site.Title }}">
   {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
     {{ template "_internal/google_analytics_async.html" . }}
   {{ end }}
 </head>
 
 <body class="{{if eq .Kind `page` }}single{{else}}list{{ if .IsHome }} home{{ end }}{{end}}">
-  
+
     <header class="header row">
       <div class="show-for-large-up large-4 columns">
         <h1 class="hidden"><a href="{{.Site.BaseURL}}">Duffle</a></h1>
       </div>
-  
+
       <!-- desktop menu-->
       <nav class="small-12 large-8 columns end">
         <ul class="inline-list right show-for-large-up menu-desktop">
           {{ partial "nav.html" . }}
         </ul>
       </nav>
-      
+
       <!-- mobile menu-->
       <button class="menu-toggle hide-for-large-up columns" type="button"></button>
       <nav class="menu">
