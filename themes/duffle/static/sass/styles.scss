@@ -500,8 +500,183 @@ body.list {
 
 
 #features {
+  padding-top: 7.5rem;
+  padding-bottom: 5rem;
+
+  h3 {
+    margin: 3rem 0;
+  }
+
+  $content-height: 16rem; 
+
+  .tabs {
+    width: 100%;
+    min-height: $content-height;
+    position: relative;
+  }
   
+  .tab-height {
+    min-height: 4rem;
+  }
+  
+  .tab {
+    display: none;
+  }
+  
+  .tab-button {
+    margin: 0;
+    padding: 0.75rem 1rem 0.75rem 2.825rem;  
+    display: block;
+    position: relative;
+    width: 33.333%;
+    color: $navy;
+    border: 1px solid transparent;
+    cursor: pointer;
+    @include border-radius(.25rem, .25rem);
+    @extend .tab-height;
+    @include transition;
+
+    &:before,
+    &:after {
+      content: " ";
+      display: inline-block;
+      width: 0.25rem;
+      height: 3rem;
+      position: absolute;
+      top: 1.15rem;
+      left: 0.833rem;
+      background: lighten($bluel, 5%);
+      @include transition;
+    }
+
+    &:before {
+      @include border-radius(0.67rem, 0.67rem);
+      width: 0.67rem;
+      height: 0.67rem;
+    }
+
+    &:after {
+      top: 2.125rem;
+      left: 1rem;
+      height: auto;
+      bottom: 1rem;
+    }
+
+    h3 {
+      font-size: $base-font;
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      font-size: $base-sm;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    &:hover,
+    &.active,
+    &:active  {
+      background: lighten($bluel, 9.5%) !important;
+      border: 1px solid $bluel !important;
+
+      &:before,
+      &:after {
+        background-color: darken($bluel, 5%);
+      }
+    }
+  }
+
+  input[type="radio"]:checked + label {
+    background: lighten($bluel, 7.5%) !important;
+    border: 1px solid $bluel !important;
+
+    &:before {
+      background-color: $green;
+    }
+
+    &:after {
+      background-color: darken($bluel, 5%);
+    }
+  }
+
+  .docs-link {
+    position: absolute;
+    bottom: -3.25rem;
+    padding: 0 0 0 3rem;
+    color: $green;
+
+    &:before {
+      @include border-radius(0.67rem, 0.67rem);
+      @include transition;
+      content: " ";
+      display: inline-block;
+      width: 0.67rem;
+      height: 0.67rem;
+      position: absolute;
+      top: 0.6rem;
+      left: 0.833rem;
+      color: $bluel;
+      background: lighten($bluel, 5%);
+    }
+  }
+  
+  .display {
+    margin: 0;
+    padding:  0;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    width: calc(100% - 33.333%);
+    height: 32rem;
+    overflow-y: scroll;
+    @include border-radius(.25rem, .25rem);
+    background: linear-gradient(to bottom right, rgb(240, 244, 251) 0%, rgb(223, 232, 246) 80%);
+  }
+
+  .code-wrap {
+    padding: 0rem 2rem 1rem;
+
+    p {
+      margin: 1rem 0;
+      padding: 0;
+      display: block;
+      position: relative;
+      height: auto;
+      color: lighten(desaturate($navy, 20%), 15%);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: $base-sm;
+      line-height: 1.6;
+
+      strong {
+        font-weight: 400;
+        color: darken($navy, 7.5%);
+        margin-top: 2rem;
+        display: block;
+      }
+    }
+
+    i {
+      font-style: normal;
+      color: $green;
+      font-family: $workbold;
+    }
+  }
+  
+  #tab--1:checked ~ #tab-button--1,
+  #tab--2:checked ~ #tab-button--2,
+  #tab--3:checked ~ #tab-button--3,
+  #tab--4:checked ~ #tab-button--4 {
+    color: $navy;
+  }
+  #tab--1:checked ~ #display--1,
+  #tab--2:checked ~ #display--2,
+  #tab--3:checked ~ #display--3,
+  #tab--4:checked ~ #display--4 {
+    display: block;
+  }
 }
+
 
 #credits {
   padding-top: 8rem;

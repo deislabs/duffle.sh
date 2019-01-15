@@ -31,17 +31,155 @@
       </div>
     </div>
 
-    <!-- <div class="height-full" id="features">
-      <div class="row row-full">
-        <div class="small-12 large-offset-2 large-8 end columns">
-          <h3 class="text-center">Features:</h3>
+    <div class="height-full" id="features">
+      <div class="row">
+        <div class="small-12 large-centered large-12 columns">
+          <h3 class="text-center">Functionality</h3>
+          <p class="subhead">Duffle commands at a glance.</p>
+          
+          <div class="tabs">
+            <input class="tab" type="radio" name="tabs" checked="checked" id="tab--1"/>
+            <label class="tab-button" for="tab--1" id="tab-button--1">
+              <h3>Duffle Build</h3>
+              <p>Builds the CNAB invocation image. When a Duffle app is multi-container, it also will build those images.</p>
+            </label>
+            <input class="tab" type="radio" name="tabs" id="tab--2"/>
+            <label class="tab-button" for="tab--2" id="tab-button--2">
+              <h3>Duffle Install</h3>
+              <p>Installs a bundle, using built-in Docker and OCI drivers.</p>
+            </label>
+            <input class="tab" type="radio" name="tabs" id="tab--3"/>
+            <label class="tab-button" for="tab--3" id="tab-button--3">
+              <h3>Duffle Push/Pull</h3>
+              <p>Push or pull a CNAB bundle to a repository.</p>
+            </label>
+            <input class="tab" type="radio" name="tabs" id="tab--4"/>
+            <label class="tab-button" for="tab--4" id="tab-button--4">
+              <h3>Duffle Sign</h3>
+              <p>Adds a cryptographic signature to a bundle, using OpenPGP</p>
+            </label>
+            <a href="https://github.com/deislabs/duffle/tree/master/docs" class="docs-link">Visit the docs for more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <div class="display" id="display--1">
+              <div class="code-wrap">
+                <p>
+                  <strong><i>$</i> duffle build ./examples/helloworld/ </strong><br/>
+                  &nbsp;&nbsp;Duffle Build Started: 'helloworld': 01CS02FNS3FTM9907V83GAQQMT<br/>
+                  &nbsp;&nbsp;helloworld: Building CNAB components: SUCCESS ⚓ &nbsp;(1.0090s)
+                </p>
+
+                <p>
+                  <strong><i>$</i> duffle credentials generate helloworld-creds -f examples/ 
+                    helloworld/cnab/bundle.json</strong><br/>
+                  &nbsp;&nbsp; name: helloworld-creds<br/>
+                  &nbsp;&nbsp;credentials:<br/>
+                  &nbsp;&nbsp;&nbsp;- name: quux<br/>
+                  &nbsp;&nbsp;&nbsp;- source:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: EMPTY<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: pquux
+                </p>
+
+                <p>
+                  <strong><i>$</i> duffle install helloworld-demo -c helloworld-creds -f examples/helloworld/cnab/bundle.json</strong><br />
+                  Executing install action...<br /><br />
+                  Install action<br />
+                  Action install complete for helloworld-demo
+                </p>
+              </div>
+            </div>
+            <div class="display" id="display--2">
+              <div class="code-wrap">
+                <p>
+                  <strong><i>$</i> duffle build ./examples/helloworld/ </strong><br/>
+                  &nbsp;&nbsp;Duffle Build Started: 'helloworld': 01CS02FNS3FTM9907V83GAQQMT<br/>
+                  &nbsp;&nbsp;helloworld: Building CNAB components: SUCCESS ⚓ &nbsp;(1.0090s)
+                </p>
+
+                <p>
+                  <strong><i>$</i> duffle credentials generate helloworld-creds -f examples/ 
+                    helloworld/cnab/bundle.json</strong><br/>
+                  &nbsp;&nbsp; name: helloworld-creds<br/>
+                  &nbsp;&nbsp;credentials:<br/>
+                  &nbsp;&nbsp;&nbsp;- name: quux<br/>
+                  &nbsp;&nbsp;&nbsp;- source:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: EMPTY<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: pquux
+                </p>
+
+                <p>
+                  <strong><i>$</i> duffle install helloworld-demo -c helloworld-creds -f examples/helloworld/cnab/bundle.json</strong><br />
+                  Executing install action...<br /><br />
+                  Install action<br />
+                  Action install complete for helloworld-demo
+                </p>
+              </div>
+            </div>
+            <div class="display" id="display--3">
+              <div class="code-wrap">
+                <p>
+                  <i>$</i> <strong>duffle build ./examples/helloworld/ </strong><br/>
+                  &nbsp;&nbsp;Duffle Build Started: 'helloworld': 01CS02FNS3FTM9907V83GAQQMT<br/>
+                  &nbsp;&nbsp;helloworld: Building CNAB components: SUCCESS ⚓ &nbsp;(1.0090s)
+                </p>
+
+                <p>
+                  <i>$</i> <strong>duffle credentials generate helloworld-creds -f examples/ 
+                    helloworld/cnab/bundle.json</strong><br/>
+                  &nbsp;&nbsp; name: helloworld-creds<br/>
+                  &nbsp;&nbsp;credentials:<br/>
+                  &nbsp;&nbsp;&nbsp;- name: quux<br/>
+                  &nbsp;&nbsp;&nbsp;- source:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: EMPTY<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: pquux
+                </p>
+
+                <p>
+                  <i>$</i> <strong>duffle install helloworld-demo -c helloworld-creds -f examples/helloworld/cnab/bundle.json</strong><br />
+                  Executing install action...<br /><br />
+                  Install action<br />
+                  Action install complete for helloworld-demo
+                </p>
+              </div>
+            </div>
+            <div class="display" id="display--4">
+              <div class="code-wrap">
+                <p>
+                  <i>$</i> <strong>duffle build ./examples/helloworld/ </strong><br/>
+                  &nbsp;&nbsp;Duffle Build Started: 'helloworld': 01CS02FNS3FTM9907V83GAQQMT<br/>
+                  &nbsp;&nbsp;helloworld: Building CNAB components: SUCCESS ⚓ &nbsp;(1.0090s)
+                </p>
+
+                <p>
+                  <i>$</i> <strong>duffle credentials generate helloworld-creds -f examples/ 
+                    helloworld/cnab/bundle.json</strong><br/>
+                  &nbsp;&nbsp; name: helloworld-creds<br/>
+                  &nbsp;&nbsp;credentials:<br/>
+                  &nbsp;&nbsp;&nbsp;- name: quux<br/>
+                  &nbsp;&nbsp;&nbsp;- source:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: EMPTY<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination:<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: pquux
+                </p>
+
+                <p>
+                  <i>$</i> <strong>duffle install helloworld-demo -c helloworld-creds -f examples/helloworld/cnab/bundle.json</strong><br />
+                  Executing install action...<br /><br />
+                  Install action<br />
+                  Action install complete for helloworld-demo
+                </p>
+              </div>
+            </div>
+          </div>
+      
         </div>
       </div>
             
       <div class="row row-full">
 
       </div>
-    </div> / features -->
+    </div> <!--/ features -->
     
     <div class="row row-full" id="credits">
       <div class="small-12 large-10 large-centered columns">
