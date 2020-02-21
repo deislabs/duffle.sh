@@ -68,7 +68,7 @@ gulp.task('clean', function () {
 
 
 // 'gulp' default task to build the site assets
-gulp.task('default', ['styles', 'images', 'copy', 'copyall']);
+gulp.task('default', gulp.series('styles', 'images', 'copy', 'copyall'), function () {});
 
 // 'gulp watch' to watch for changes during dev
 gulp.task('watch', function () {
