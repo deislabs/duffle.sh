@@ -8,7 +8,6 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   notify = require('gulp-notify'),
   cache = require('gulp-cache'),
-  imagemin = require('gulp-imagemin'),
   livereload = require('gulp-livereload'),
   del = require('del'),
   cssnano = require('gulp-cssnano'),
@@ -37,9 +36,6 @@ gulp.task('styles', function () {
 gulp.task('images', function () {
   return streamqueue({objectMode: true},
     gulp.src('themes/duffle/static/img/**/*{.jpg, .png, .gif}')
-      .pipe(cache(imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
-      .pipe(notify({message: 'Images minifed.'})),
-    gulp.src('themes/duffle/static/img/**/*')
       .pipe(notify({message: 'Images moved.'}))
       .pipe(gulp.dest(destination + '/img'))
   )
