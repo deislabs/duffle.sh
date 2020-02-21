@@ -68,7 +68,7 @@ gulp.task('default', gulp.series('styles', 'images', 'copy', 'copyall'), functio
 // 'gulp watch' to watch for changes during dev
 gulp.task('watch', function () {
 
-  gulp.watch('themes/duffle/static/sass/**/*.scss', ['styles']);
+  gulp.watch('themes/duffle/static/sass/**/*.scss', gulp.series('styles'));
 
   livereload.listen();
 
